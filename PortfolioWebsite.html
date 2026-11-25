@@ -348,19 +348,41 @@
 
             <!-- DEVELOPMENT PROGRESS -->
             <section
-              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
+              id="progress"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-6 sm:p-8 rounded-2xl border border-zinc-600"
             >
-              <section id="progress" class="mb-16">
-                <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
-                  Development Progress
-                </h2>
-                <img
-                  class="w-full h-auto rounded-lg mb-8"
-                  src="./public/Portfolio-InitialDesign.jpg"
-                  alt="Template of the previous portfolio with some new code i've written"
-                  loading="lazy"
-                />
-                <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                Development Progress
+              </h2>
+
+              <!-- Initial Design -->
+              <div class="mb-12 pb-12 border-b border-zinc-600/60">
+                <p class="text-sm dark:text-gray-400 text-gray-600 mb-4">
+                  Click the image to zoom in.
+                </p>
+
+                <figure class="results-figure mb-8">
+                  <button
+                    type="button"
+                    class="results-thumb group"
+                    data-lightbox
+                  >
+                    <img
+                      src="./public/Portfolio-InitialDesign.jpg"
+                      alt="Template of the previous portfolio with some new code I've written"
+                      loading="lazy"
+                      class="w-full h-auto"
+                    />
+                    <span class="results-zoom-hint" aria-hidden="true"
+                      >Zoom</span
+                    >
+                  </button>
+                  <figcaption class="results-caption">
+                    The original template with my first code changes
+                  </figcaption>
+                </figure>
+
+                <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
                   Initial Design
                 </h3>
                 <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
@@ -372,9 +394,10 @@
                   to experiment with different structures while keeping a solid
                   foundation.
                 </p>
-              </section>
+              </div>
 
-              <section class="mb-16">
+              <!-- Development -->
+              <div>
                 <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
                   Development
                 </h3>
@@ -388,27 +411,37 @@
                   Tailwind while also improving my understanding of frontend
                   development.
                 </p>
-              </section>
+              </div>
             </section>
 
             <!-- RESULTS -->
             <section
               id="results"
-              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-6 sm:p-8 rounded-2xl border border-zinc-600"
             >
               <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
                 Results
               </h2>
-              <div
-                class="mb-8 rounded-xl overflow-hidden border border-zinc-600"
-              >
-                <img
-                  class="w-full h-auto"
-                  src="./public/Portfolio-Results.jpg"
-                  alt="New composition of the portfolio website"
-                  loading="lazy"
-                />
-              </div>
+
+              <p class="text-sm dark:text-gray-400 text-gray-600 mb-4">
+                Click the image to zoom in.
+              </p>
+
+              <figure class="results-figure mb-8">
+                <button type="button" class="results-thumb group" data-lightbox>
+                  <img
+                    src="./public/Portfolio-Results.jpg"
+                    alt="New composition of the portfolio website"
+                    loading="lazy"
+                    class="w-full h-auto"
+                  />
+                  <span class="results-zoom-hint" aria-hidden="true">Zoom</span>
+                </button>
+                <figcaption class="results-caption">
+                  The final portfolio website. Click to zoom in.
+                </figcaption>
+              </figure>
+
               <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
                 The final website is a personal portfolio with a clean,
                 structured and block-based layout. Although it started from an

@@ -372,18 +372,41 @@
 
             <!-- DEVELOPMENT PROGRESS -->
             <section
-              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
+              id="progress"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-6 sm:p-8 rounded-2xl border border-zinc-600"
             >
-              <section id="progress" class="mb-16">
-                <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
-                  Development Progress
-                </h2>
-                <img
-                  class="w-full h-auto rounded-lg mb-8"
-                  src="./public/GreenPT-InitialDesign.png"
-                  alt="Styleboard and sketches of the loading, error and darkmode page of the app"
-                />
-                <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                Development Progress
+              </h2>
+
+              <p class="text-sm dark:text-gray-400 text-gray-600 mb-4">
+                Click the image to zoom in.
+              </p>
+
+              <!-- INITIAL DESIGN -->
+              <div class="mb-12 pb-12 border-b border-zinc-600/60">
+                <figure class="results-figure mb-8">
+                  <button
+                    type="button"
+                    class="results-thumb group"
+                    data-lightbox
+                  >
+                    <img
+                      src="./public/GreenPT-InitialDesign.jpg"
+                      alt="Styleboard and sketches of the loading, error and darkmode page of the app"
+                      loading="lazy"
+                      class="w-full h-auto"
+                    />
+                    <span class="results-zoom-hint" aria-hidden="true"
+                      >Zoom</span
+                    >
+                  </button>
+                  <figcaption class="results-caption">
+                    Styleboard and sketches: loading, error and dark mode
+                  </figcaption>
+                </figure>
+
+                <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
                   Initial Design
                 </h3>
                 <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
@@ -400,18 +423,34 @@
                   narrow down the possibilities and find a direction that would
                   encourage people to learn about more sustainable AI use.
                 </p>
-              </section>
+              </div>
 
-              <section class="mb-16">
-                <div
-                  class="mb-8 rounded-xl overflow-hidden border border-zinc-600 shadow-xl"
-                >
-                  <img
-                    class="w-full h-auto"
-                    src="./public/GreenPT-Development.png"
-                    alt="Sign up, account and setting page with a wireflow"
-                  />
-                </div>
+              <!-- DEVELOPMENT -->
+              <div>
+                <p class="text-sm dark:text-gray-400 text-gray-600 mb-4">
+                  Click the image to zoom in.
+                </p>
+                <figure class="results-figure mb-8">
+                  <button
+                    type="button"
+                    class="results-thumb group"
+                    data-lightbox
+                  >
+                    <img
+                      src="./public/GreenPT-Development.jpg"
+                      alt="Sign up, account and setting page with a wireflow"
+                      loading="lazy"
+                      class="w-full h-auto"
+                    />
+                    <span class="results-zoom-hint" aria-hidden="true"
+                      >Zoom</span
+                    >
+                  </button>
+                  <figcaption class="results-caption">
+                    Sign up, account and settings pages with a wireflow
+                  </figcaption>
+                </figure>
+
                 <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
                   Development
                 </h3>
@@ -432,27 +471,38 @@
                   not lose points when they make a less effective choice;
                   instead, they receive feedback and tips to help them improve.
                 </p>
-              </section>
+              </div>
             </section>
 
             <!-- RESULTS -->
             <section
               id="results"
-              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-6 sm:p-8 rounded-2xl border border-zinc-600"
             >
               <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
                 Results
               </h2>
-              <div
-                class="mb-8 rounded-xl overflow-hidden border border-zinc-600"
-              >
-                <img
-                  class="w-full h-auto"
-                  src="./public/GreenPT-Results.png"
-                  alt="Sing up and setting page online for web"
-                />
-              </div>
-              <p class="dark:text-gray-100 text-gray-900 mb-6 leading-relaxed">
+
+              <p class="text-sm dark:text-gray-400 text-gray-600 mb-4">
+                Click the image to zoom in.
+              </p>
+
+              <figure class="results-figure mb-8">
+                <button type="button" class="results-thumb group" data-lightbox>
+                  <img
+                    src="./public/GreenPT-Results.jpg"
+                    alt="Final GreenPT screens: feedback pop-up, energy and CO2 overview, home screen, completed quest and mobile versions"
+                    loading="lazy"
+                    class="w-full h-auto"
+                  />
+                  <span class="results-zoom-hint" aria-hidden="true">Zoom</span>
+                </button>
+                <figcaption class="results-caption">
+                  Final screens in light and dark mode, desktop and mobile.
+                </figcaption>
+              </figure>
+
+              <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
                 The final concept combines the quest system, points and levels,
                 and an interactive forest that reflects the user's progress.
                 Completing challenges helps users learn how to write more

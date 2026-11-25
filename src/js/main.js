@@ -80,3 +80,95 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+// Lightbox
+(function () {
+  function init() {
+    const thumbs = Array.from(document.querySelectorAll('[data-lightbox]'));
+    if (!thumbs.length) return;
+
+    // Overlay aanmaken
+    const box = document.createElement('div');
+    box.id = 'lightbox';
+    box.className = 'lb hidden';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Image viewer');
+    box.innerHTML = `
+      <div class="lb-scroll"><img class="lb-img" src="" alt="" /></div>
+      <p class="lb-caption"></p>
+      <button type="button" class="lb-btn lb-close" aria-label="Close">&times;</button>
+      <button type="button" class="lb-btn lb-prev" aria-label="Previous image">&#8249;</button>
+      <button type="button" class="lb-btn lb-next" aria-label="Next image">&#8250;</button>
+    `;
+    document.body.appendChild(box);
+
+    const scroller = box.querySelector('.lb-scroll');
+    const img = box.querySelector('.lb-img');
+    const caption = box.querySelector('.lb-caption');
+    const prev = box.querySelector('.lb-prev');
+    const next = box.querySelector('.lb-next');
+    let index = 0;
+    let lastFocus = null;
+
+    // Pijltjes verbergen als er maar 1 afbeelding is
+    if (thumbs.length < 2) {
+      prev.style.display = 'none';
+      next.style.display = 'none';
+    }
+
+    function setZoom(on) {
+      img.classList.toggle('is-zoomed', on);
+      if (!on) scroller.scrollTo(0, 0);
+    }
+
+    function show(i) {
+      index = (i + thumbs.length) % thumbs.length;
+      const src = thumbs[index].querySelector('img');
+      img.src = src.currentSrc || src.src;
+      img.alt = src.alt;
+      const cap = thumbs[index].closest('figure')?.querySelector('figcaption');
+      caption.textContent = cap ? cap.textContent : '';
+      setZoom(false);
+    }
+
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i);
+      box.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      box.querySelector('.lb-close').focus();
+    }
+
+    function close() {
+      box.classList.add('hidden');
+      document.body.style.overflow = '';
+      setZoom(false);
+      if (lastFocus) lastFocus.focus();
+    }
+
+    thumbs.forEach((t, i) => t.addEventListener('click', () => open(i)));
+    img.addEventListener('click', () =>
+      setZoom(!img.classList.contains('is-zoomed'))
+    );
+    box.querySelector('.lb-close').addEventListener('click', close);
+    prev.addEventListener('click', () => show(index - 1));
+    next.addEventListener('click', () => show(index + 1));
+    scroller.addEventListener('click', e => {
+      if (e.target === scroller) close();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (box.classList.contains('hidden')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft' && thumbs.length > 1) show(index - 1);
+      if (e.key === 'ArrowRight' && thumbs.length > 1) show(index + 1);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
